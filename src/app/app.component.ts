@@ -8,4 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app';
   imageName = 'http://localhost:5004/01/02/0001.jp2';
+  imageNames = Array(10).fill(this.imageName);
 }

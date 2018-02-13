@@ -1,0 +1,3 @@
+<mat-grid-list [cols]="columns" rowHeight="2:1">
+  <mat-grid-tile *ngFor="let imageName of imageNames"><img [src]="loadThumbnail(imageName)"></mat-grid-tile>
+</mat-grid-list>
