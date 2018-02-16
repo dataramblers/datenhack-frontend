@@ -8,16 +8,22 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 * `nodejs` and `npm`
 * `yarn`
+* `docker` (for local testing)
  
 ### Installation steps
 
 1. Clone repository: `git clone https://github.com/dataramblers/datenhack-frontend.git`
 2. Navigate to directory: `cd datenhack-frontend`
-2. Install dependencies: `yarn`
+3. Install dependencies: `yarn`
 
-## Development server
+## Running
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Info: Will possibly be changed in future releases!
+
+1. Download and run docker image of the `Loris image server` on port `5004`: `docker run
+   -dp5004:5004 lorisimageserver/loris`
+2. Start dev server: `ng serve`
+3. Navigate to `localhost:4200`
 
 ## Code scaffolding
 
