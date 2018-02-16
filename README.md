@@ -1,6 +1,19 @@
-# DatenhackFrontend
+# Frontend Datenhack
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.7.
+
+## Installation
+
+### Prerequisites
+
+* `nodejs` and `npm`
+* `yarn`
+ 
+### Installation steps
+
+1. Clone repository: `git clone https://github.com/dataramblers/datenhack-frontend.git`
+2. Navigate to directory: `cd datenhack-frontend`
+2. Install dependencies: `yarn`
 
 ## Development server
 
