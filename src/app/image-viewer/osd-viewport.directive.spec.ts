@@ -24,7 +24,7 @@ describe('OsdViewportDirective', () => {
     });
 
     it('should create an instance', () => {
-        const directive = new OsdViewportDirective(el);
+        const directive = new OsdViewportDirective(el, undefined);
         expect(directive).toBeTruthy();
     });
 });
