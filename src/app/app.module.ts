@@ -4,6 +4,8 @@ import { ImageViewerModule } from './image-viewer/image-viewer.module';
 import { ImageOverviewModule } from './image-overview/image-overview.module';
 
 import { AppComponent } from './app.component';
+import {ImagesService} from './images.service';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -13,9 +15,10 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     ImageViewerModule,
-    ImageOverviewModule
+    ImageOverviewModule,
+      HttpClientModule
   ],
-  providers: [],
+  providers: [ImagesService, HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule {
