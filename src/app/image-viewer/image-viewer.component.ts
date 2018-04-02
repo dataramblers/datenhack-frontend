@@ -43,6 +43,7 @@ export class ImageViewerComponent implements OnInit, OnDestroy {
 
     const osdOptions = {
       element: this.osdViewport.nativeElement,
+      prefixUrl: '//openseadragon.github.io/openseadragon/images/',
       sequenceMode: false,
       showNavigator: false,
       defaultZoomLevel: 1,
