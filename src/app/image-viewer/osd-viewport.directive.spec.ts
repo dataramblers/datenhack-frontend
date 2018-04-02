@@ -23,8 +23,8 @@ describe('OsdViewportDirective', () => {
         viewContainerRef = fixture.elementRef.nativeElement.viewContainer;
     });
 
-  it('should create an instance', () => {
-    const directive = new OsdViewportDirective(viewContainerRef);
-    expect(directive).toBeTruthy();
-  });
+    it('should create an instance', () => {
+        const directive = new OsdViewportDirective(viewContainerRef);
+        expect(directive).toBeTruthy();
+    });
 });
