@@ -9,7 +9,22 @@ declare const OpenSeadragon: any;
 })
 export class ImageViewerComponent implements OnInit, OnDestroy {
 
-  @Input() imageName: string;
+    /**
+     * Name of the image
+     */
+  private image: string;
+
+    /**
+     * Set the new name and call the viewer
+     * @param {string} name
+     */
+  @Input() set imageName(name: string)  {
+    if ( typeof this.viewer !== 'undefined') {
+        this.viewer.open(name);
+    }
+    this.image = name;
+  }
+
   @ViewChild('osdViewport') osdViewport;
   private viewer: any;
 
@@ -17,7 +32,7 @@ export class ImageViewerComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.loadOpenseadragon();
+      this.loadOpenseadragon();
   }
 
   ngOnDestroy() {
@@ -28,15 +43,15 @@ export class ImageViewerComponent implements OnInit, OnDestroy {
 
     const osdOptions = {
       element: this.osdViewport.nativeElement,
-      prefixUrl: '//openseadragon.github.io/openseadragon/images/',
       sequenceMode: false,
       showNavigator: false,
       defaultZoomLevel: 1,
       minZoomImageRatio: 1,
-      showRotationControl: true
+      showRotationControl: true,
+        crossOriginPolicy: false
     };
     this.viewer = OpenSeadragon(osdOptions);
-    this.viewer.open(this.imageName);
+    this.viewer.open(this.image);
     // viewContainerRef.createComponent(this.viewer);
 
   }
