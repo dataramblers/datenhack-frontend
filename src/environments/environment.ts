@@ -5,5 +5,9 @@
 
 export const environment = {
   production: false,
-  api: 'http://localhost:5004/'
+  api: 'http://localhost:5004/',
+  elasticsearch: 'es.dataramblers.io',
+  esIndex: 'sah',
+  iiif: 'iiif.dataramblers.io',
+    protocol: 'http'
 };
