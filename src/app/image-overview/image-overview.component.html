@@ -1,3 +1,11 @@
-<mat-grid-list [cols]="columns" rowHeight="2:1">
-  <mat-grid-tile *ngFor="let imageName of imageNames" (click)="selectImage(imageName.signatur)"><img [src]="loadThumbnail(imageName.signatur)"></mat-grid-tile>
-</mat-grid-list>
+<div fxLayout="row" *ngFor="let image of imageNames">
+  <div fxFlex="30" >
+    <img [src]="loadThumbnail(image.signatur)" (click)="selectImage(image.signatur)" class="clickable">
+  </div>
+  <div fxFlex="70">
+    <ul>
+      <li>{{image.title}}</li>
+      <li>{{image.signatur}}</li>
+    </ul>
+  </div>
+</div>
