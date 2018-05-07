@@ -1,7 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ImageViewerModule } from './image-viewer/image-viewer.module';
-import { ImageOverviewModule } from './image-overview/image-overview.module';
 
 import { AppComponent } from './app.component';
 import { ImagesService } from './images.service';
@@ -15,12 +13,13 @@ import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './app.effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { RouterModule, Routes } from '@angular/router';
+import { CoreModule } from './core/core.module';
+import { PageNotFoundComponent } from './core/components/page-not-found.component';
 
 
 const routes: Routes = [
-  // {path: 'overview', component: AppComponent},
-  // {path: '', redirectTo: '/overview', pathMatch: 'full'},
-  // {path: '**', component: NotFoundPageComponent}
+  {path: '', redirectTo: '/overview', pathMatch: 'full'},
+  {path: '**', component: PageNotFoundComponent}
 ];
 
 @NgModule({
@@ -29,14 +28,13 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    ImageViewerModule,
-    ImageOverviewModule,
     HttpClientModule,
     FlexLayoutModule,
     StoreModule.forRoot(reducers, {metaReducers}),
     StoreRouterConnectingModule.forRoot({stateKey: 'router'}),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     EffectsModule.forRoot([ AppEffects ]),
+    CoreModule,
     RouterModule.forRoot(routes)
   ],
   providers: [ ImagesService, HttpClient ],

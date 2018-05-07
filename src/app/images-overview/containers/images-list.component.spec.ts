@@ -1,23 +1,23 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ImageOverviewComponent } from './image-overview.component';
-import {MaterialModule} from '../material.module';
+import { ImagesListComponent } from './images-list.component';
+import {MaterialModule} from '../../material.module';
 import {By} from '@angular/platform-browser';
 
-describe('ImageOverviewComponent', () => {
-    let component: ImageOverviewComponent;
-    let fixture: ComponentFixture<ImageOverviewComponent>;
+describe('ImagesListComponent', () => {
+    let component: ImagesListComponent;
+    let fixture: ComponentFixture<ImagesListComponent>;
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [ ImageOverviewComponent ],
+            declarations: [ ImagesListComponent ],
             imports: [MaterialModule]
         })
             .compileComponents();
     }));
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(ImageOverviewComponent);
+        fixture = TestBed.createComponent(ImagesListComponent);
         component = fixture.componentInstance;
         component.imageNames = Array(10).fill('test');
         component.columns = 2;

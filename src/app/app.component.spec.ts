@@ -1,6 +1,6 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import {ImageOverviewModule} from './image-overview/image-overview.module';
+import {ImagesOverviewModule} from './images-overview/images-overview.module';
 import {ImageViewerModule} from './image-viewer/image-viewer.module';
 import {MaterialModule} from './material.module';
 describe('AppComponent', () => {
@@ -10,7 +10,7 @@ describe('AppComponent', () => {
                 AppComponent,
             ],
             imports: [
-                ImageOverviewModule,
+                ImagesOverviewModule,
                 ImageViewerModule,
                 MaterialModule
             ]

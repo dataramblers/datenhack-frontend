@@ -1,9 +1,0 @@
-<router-outlet></router-outlet>
-<div fxLayout="row">
-  <div fxFlex="60">
-    <app-image-viewer [imageName]="imageName"></app-image-viewer>
-  </div>
-  <div fxFlex="40">
-    <app-image-overview [imageNames]="imageNames" [columns]="2" (select)="setImage($event)"></app-image-overview>
-  </div>
-</div>
