@@ -5,11 +5,12 @@ import { ImageViewerComponent } from './image-viewer.component';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
   ],
-  declarations: [OsdViewportDirective, ImageViewerComponent],
+  declarations: [ OsdViewportDirective, ImageViewerComponent ],
   exports: [
     ImageViewerComponent
   ]
 })
-export class ImageViewerModule { }
+export class ImageViewerModule {
+}

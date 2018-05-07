@@ -3,16 +3,16 @@ import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../material.module';
 
 import { ImageOverviewComponent } from './image-overview.component';
-import {ImagesService} from '../images.service';
-import {FlexLayoutModule} from '@angular/flex-layout';
+import { ImagesService } from '../images.service';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   imports: [
     CommonModule,
     MaterialModule,
-      FlexLayoutModule
+    FlexLayoutModule,
   ],
-    providers: [ImagesService],
+  providers: [ ImagesService ],
   declarations: [ ImageOverviewComponent ],
   exports: [ ImageOverviewComponent ]
 })

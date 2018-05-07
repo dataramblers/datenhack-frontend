@@ -1,28 +1,25 @@
-import {Component, ElementRef, Input, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import { Component, ElementRef, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
 
 declare const OpenSeadragon: any;
 
 @Component({
   selector: 'app-image-viewer',
   templateUrl: './image-viewer.component.html',
-  styleUrls: ['./image-viewer.component.css']
+  styleUrls: [ './image-viewer.component.css' ]
 })
 export class ImageViewerComponent implements OnInit, OnDestroy {
 
-    /**
-     * Name of the image
-     */
-  private image: string;
+  private nameOfImage: string;
 
-    /**
-     * Set the new name and call the viewer
-     * @param {string} name
-     */
-  @Input() set imageName(name: string)  {
-    if ( typeof this.viewer !== 'undefined') {
-        this.viewer.open(name);
+  /**
+   * Set the new name and call the viewer
+   * @param {string} name
+   */
+  @Input() set imageName(name: string) {
+    if (typeof this.viewer !== 'undefined') {
+      this.viewer.open(name);
     }
-    this.image = name;
+    this.nameOfImage = name;
   }
 
   @ViewChild('osdViewport') osdViewport;
@@ -32,7 +29,7 @@ export class ImageViewerComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-      this.loadOpenseadragon();
+    this.loadOpenseadragon();
   }
 
   ngOnDestroy() {
@@ -49,10 +46,10 @@ export class ImageViewerComponent implements OnInit, OnDestroy {
       defaultZoomLevel: 1,
       minZoomImageRatio: 1,
       showRotationControl: true,
-        crossOriginPolicy: false
+      crossOriginPolicy: false
     };
     this.viewer = OpenSeadragon(osdOptions);
-    this.viewer.open(this.image);
+    this.viewer.open(this.nameOfImage);
     // viewContainerRef.createComponent(this.viewer);
 
   }
