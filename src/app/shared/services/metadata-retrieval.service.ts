@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { UrlHelper } from './shared/url-helper';
-import { Image } from './shared/image';
+import { UrlHelper } from '../url-helper';
+import { Image } from '../image';
 import 'rxjs/add/operator/map';
-import { ElasticSearchResponse } from './shared/elastic-search-response';
+import { ElasticSearchResponse } from '../elastic-search-response';
 
 @Injectable()
-export class ImagesService {
+export class MetadataRetrievalService {
 
   constructor(private http: HttpClient) {
   }
