@@ -2,21 +2,21 @@ import { TestBed} from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { Observable } from 'rxjs/Observable';
 
-import { AppEffects } from './app.effects';
+import { LoadImagesEffects } from './load-images.effects';
 
-describe('AppService', () => {
+describe('LoadImagesService', () => {
   let actions$: Observable<any>;
-  let effects: AppEffects;
+  let effects: LoadImagesEffects;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
-        AppEffects,
+        LoadImagesEffects,
         provideMockActions(() => actions$)
       ]
     });
 
-    effects = TestBed.get(AppEffects);
+    effects = TestBed.get(LoadImagesEffects);
   });
 
   it('should be created', () => {

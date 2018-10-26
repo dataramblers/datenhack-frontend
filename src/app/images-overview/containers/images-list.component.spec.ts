@@ -19,8 +19,6 @@ describe('ImagesListComponent', () => {
     beforeEach(() => {
         fixture = TestBed.createComponent(ImagesListComponent);
         component = fixture.componentInstance;
-        component.imageNames = Array(10).fill('test');
-        component.columns = 2;
         fixture.detectChanges();
     });
 

@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { ImagesService } from './images.service';
+import { MetadataRetrievalService } from './shared/services/metadata-retrieval.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { StoreModule } from '@ngrx/store';
@@ -37,7 +37,7 @@ const routes: Routes = [
     CoreModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [ ImagesService, HttpClient ],
+  providers: [ MetadataRetrievalService, HttpClient ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {

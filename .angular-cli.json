@@ -36,6 +36,9 @@
       "config": "./protractor.conf.js"
     }
   },
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  },
   "lint": [
     {
       "project": "src/tsconfig.app.json",

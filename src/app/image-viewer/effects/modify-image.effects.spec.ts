@@ -2,21 +2,21 @@ import { TestBed} from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { Observable } from 'rxjs/Observable';
 
-import { AppEffects } from './app.effects';
+import { ModifyImageEffects } from './modify-image.effects';
 
-describe('AppService', () => {
+describe('ModifyImageService', () => {
   let actions$: Observable<any>;
-  let effects: AppEffects;
+  let effects: ModifyImageEffects;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
-        AppEffects,
+        ModifyImageEffects,
         provideMockActions(() => actions$)
       ]
     });
 
-    effects = TestBed.get(AppEffects);
+    effects = TestBed.get(ModifyImageEffects);
   });
 
   it('should be created', () => {

@@ -1,6 +1,11 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Image } from '../../shared/image';
-import { environment } from '../../../environments/environment';
+import { Component } from '@angular/core';
+import * as fromModifyImage from '../../image-viewer/reducers/modify-image.reducer';
+import * as fromModifyImageAction from '../../image-viewer/actions/modify-image.actions';
+import * as fromRoot from '../../reducers';
+import { select, Store } from '@ngrx/store';
+import { IIIFImageFormat, IIIFImageQuality, Image } from '../../shared/models/image.model';
+import { Observable } from 'rxjs/Observable';
+import { IiifUrl } from '../../shared/utils/iiif-url';
 
 @Component({
   selector: 'app-images-list',
@@ -9,15 +14,27 @@ import { environment } from '../../../environments/environment';
 })
 export class ImagesListComponent {
 
-  @Input() imageNames: Image[];
-  @Input() columns: number;
-  @Output() select = new EventEmitter<string>();
+  imageNames;
 
-  loadThumbnail(path: string) {
-    return 'http://' + environment.iiif + '/' + path + '.tif/full/125,/0/default.jpg';
+  constructor(
+    private modifyImageStore: Store<fromModifyImage.State>,
+    private rootStore: Store<fromRoot.AppState>
+  ) {
+    this.imageNames = this.rootStore.pipe(select(fromRoot.selectAllImages));
   }
 
-  selectImage(signature) {
-    this.select.emit(signature);
+  // noinspection JSMethodCanBeStatic
+  loadThumbnail(path: string) {
+    return new IiifUrl(path)
+      .size('full')
+      .region('125,')
+      .rotation('0')
+      .quality(IIIFImageQuality.DEFAULT)
+      .format(IIIFImageFormat.JPG)
+      .toString();
+  }
+
+  selectImage(image: Image) {
+    this.modifyImageStore.dispatch(new fromModifyImageAction.LoadImage({image: image}));
   }
 }

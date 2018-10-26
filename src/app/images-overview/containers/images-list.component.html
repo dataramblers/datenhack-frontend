@@ -1,6 +1,6 @@
-<div fxLayout="row" *ngFor="let image of imageNames">
+<div fxLayout="row" *ngFor="let image of imageNames | async">
   <div fxFlex="30" >
-    <img [src]="loadThumbnail(image.signatur)" (click)="selectImage(image.signatur)" class="clickable">
+    <img [src]="loadThumbnail(image.signatur)" (click)="selectImage(image)" class="clickable">
   </div>
   <div fxFlex="70">
     <ul>

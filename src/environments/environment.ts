@@ -9,5 +9,5 @@ export const environment = {
   elasticsearch: 'es.dataramblers.io',
   esIndex: 'sah',
   iiif: 'iiif.dataramblers.io',
-    protocol: 'http'
+  protocol: 'http'
 };
